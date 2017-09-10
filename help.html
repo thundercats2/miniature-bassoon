@@ -1,0 +1,522 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>JonDo-Hilfe: JonDoFox</title>
+  <link rel="stylesheet" type="text/css" href="Other/xhelpfrms.css">
+</head>
+
+<body>
+
+<h2>JonDoFox - Sicherheit und Privatsph&#xe4;re f&#xfc;r Firefox</h2>
+
+<p>JonDoFox ist ein <a
+href="http://www.mozilla-europe.org/de/firefox/">Firefox</a>-Browserprofil
+(Browserkonfiguration), das speziell f&#xfc;r anonymes und sicheres Websurfen
+optimiert ist. Sie k&#xf6;nnen JonDoFox sowohl in Ihren Firefox integrieren als
+auch separat und vom USB-Stick ausf&#xfc;hren. Im Folgenden wird beschrieben,
+wie Sie JonDoFox installieren und benutzen. </p>
+<ul>
+  <li><strong>Installationsoptionen</strong>
+    <ul>
+      <li><a href="#ffprofile">Integration in Firefox</a></li>
+      <li><a href="#jdfPortable">"Zum Mitnehmen", z.B. auf USB-Sticks (zur Zeit
+        nur f&#xfc;r Windows)</a></li>
+    </ul>
+  </li>
+  <li><strong>Bedienung</strong>
+    <ul>
+      <li><a href="#using_jondofox">JonDoFox benutzen</a></li>
+      <li><a href="#jdf_features">JonDoFox Features</a></li>
+      <li><a href="#controlCookies">Cookies
+        kontrollieren mit Cookie Monster</a></li>
+      <li><a href="#noscript">Aktive Inhalte kontrollieren mit NoScript</a></li>
+      <li><a href="#noscript_ssl">HTTPS-Verschl&uuml;sselung erwzingen</a></li>
+      <li><a href="#videoDownload">Anonymer Download von Videos und Video-Streams</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Installationsoptionen f&#xfc;r JonDoFox</h2>
+
+<h3><a name="ffprofile" id="ffprofile">Variante 1: Integration in
+Firefox</a></h3>
+
+<p>Diese Installationsoption integriert das JonDoFox-Profil in einen lokal
+installierten Firefox, so dass JonDoFox nahtlos mit Ihrem System
+zusammenarbeitet. Eine eventuell von Ihnen vorher angelegte "normale"
+Firefox-Konfiguration wird durch die Profil-Installation nicht angetastet. Sie
+k&#xf6;nnen nach der Installation bei jedem Start von Firefox zwischen Ihrer
+und der JonDoFox-Konfiguration ausw&#xe4;hlen. </p>
+
+<p>Installieren Sie zun&#xe4;chst <a
+href="http://www.mozilla-europe.org/de/firefox/">Firefox</a> auf Ihrem System,
+falls noch nicht geschehen. Anschlie&#xdf;end k&#xf6;nnen Sie die Installation
+von JonDoFox wie folgt durchf&#xfc;hren:</p>
+<ul>
+  <li><strong>Windows</strong>
+    <p>Laden Sie das <a
+    href="https://anonymous-proxy-servers.net/downloads/JonDoFox.paf.exe">JonDoFox-Installationsprogramm</a> herunter.
+    Starten Sie das heruntergeladene Programm durch einen (Doppel-)Klick und
+    folgen Sie dann den Anweisungen.</p>
+  </li>
+  <li><strong>Mac OS X</strong>
+    <ol>
+      <li>Laden Sie die Datei <a
+        href="https://anonymous-proxy-servers.net/de/downloads/JonDoFox_OS_X.dmg">JonDoFox_OS_X.dmg</a>
+        herunter.</li>
+      <li>&#xd6;ffnen Sie die Datei durch einen Doppelklick, und starten Sie
+        anschlie&#xdf;end <em>JonDoFox_Install</em> ebenfalls durch einen
+        Doppelklick.</li>
+    </ol>
+    <p><b>Hinweis</b><br>
+    Der Installer kann auch verwendet werden, um das von ihm installierte
+    Profil wieder zu entfernen, doch <b>beachten Sie:</b><br>
+    Bitte ver&#xe4;ndern Sie die Eintr&#xe4;ge nicht, die der Installer
+    vornimmt. Andernfalls kann keine saubere Deinstallation mehr
+    gew&#xe4;hrleistet werden! Nehmen Sie ebenso die Deinstallation mit dem
+    Installer <b>nur dann vor</b>, wenn Sie diesen auch f&#xfc;r die
+    JonDoFox-Installation verwendet haben. </p>
+  </li>
+  <li><strong>Debian/Ubuntu</strong>
+  <p>Benutzer von Debian und Ubuntu k&ouml;nnen das <a href="https://anonymous-proxy-servers.net/de/help/firststeps2.html">Software-Repository</a>
+  der JonDos GmbH nutzen, um JonDoFox und JonDo zu installieren.</p></li>
+  <li><strong>Andere Linuxdistributionen</b></strong>
+    <ol>
+      <li>Laden Sie die Datei <a
+        href="https://anonymous-proxy-servers.net/de/downloads/profile.zip">profile.zip</a>
+        herunter.
+      </li>
+      <li>Entpacken Sie die Datei: <kbd>&gt; unzip profile.zip -d Zielordner</kbd>
+     </li>
+      <li>Wechseln Sie in das Verzeichnis, in das Sie die Zip-Datei entpackt
+        haben. <kbd>&gt; cd Zielordner</kbd>
+      </li>
+      <li>Sie finden in diesem Ordner das Skript <code>install_linux.sh</code>.
+        F&#xfc;hren Sie es aus, um JonDoFox zu installieren. <kbd>user@computer#:/target&gt; ./install_linux.sh</kbd>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><b>Hinweis</b><br>
+Wenn eine neue Version von JonDoFox erscheint, k&#xf6;nnen Sie die neue Version
+jeweils "&#xfc;ber" die alte installieren, mit den gleichen eben besprochenen Schritten. Ihre
+Lesezeichen, die Zertifikatsdatenbank, die benutzerdefinierten STS- sowie die HTTPS-Everywhere-Regeln bleiben dabei erhalten.</p>
+
+<h3><a name="jdfPortable" id="jdfPortable">Variante 2: "zum Mitnehmen"</a></h3>
+
+<p>Die Version "zum Mitnehmen" wird f&#xfc;r Wechseldatentr&#xe4;ger empfohlen.
+Sie integriert sich nicht in Ihr System. Falls Sie Programmverkn&#xfc;pfungen
+zu JonDoFox ben&#xf6;tigen, m&#xfc;ssen Sie diese bei der Version "zum
+Mitnehmen" selber anlegen.</p>
+
+<h4>Windows (2000, XP, Vista, 7)</h4>
+
+<p>Das <a
+href="https://anonymous-proxy-servers.net/downloads/JonDoFox.paf.exe">JonDoFox-Installationsprogramm</a>
+ist auch f&#xfc;r die Installation "zum Mitnehmen" geeignet. Wenn Sie die
+"f&uuml;r Unterwegs"-Option w&#xe4;hlen, k&#xf6;nnen Sie JonDoFox damit also sowohl auf
+einem Wechseldatentr&#xe4;ger als auch auf Ihrer Festplatte einrichten. Eine
+bereits auf Ihrem Rechner vorhandene Firefox- oder JonDoFox-Installation wird
+davon nicht beeinflusst, sofern Sie JonDoFox nicht ins gleiche Verzeichnis
+installieren und eine vorhandene Installation dadurch aktualisieren. Beim
+Aktualisieren von fr&#xfc;heren JonDoFox-Versionen bleiben Ihre Lesezeichen
+und die Zertifikatsdatenbank erhalten. JonDoFox "zum Mitnehmen" integriert sich automatisch in das <a
+href="http://portableapps.com/">PortableApps</a>-Men&#xfc; f&#xfc;r das auch
+viele <a href="http://portableapps.com/apps">andere Anwendungen erh&#xe4;ltlich
+sind</a>.</p>
+
+<h2>Bedienungsanleitung f&#xfc;r JonDoFox</h2>
+
+<h3><a name="using_jondofox" id="using_jondofox">
+JonDoFox benutzen</a></h3>
+
+<p>Im JonDoFox sind bereits alle f&uuml;r sicheres und spurenarmes Surfen
+relevanten Erweiterungen mit optimalen Voreinstellungen vorhanden. Ziel ist es, standardm&auml;&szlig;ig alle m&ouml;glichen Tracking Features zu blockieren. Damit wird jedoch auch die Funktionalit&auml;t einiger Websites eingeschr&auml;nkt. Das betrifft insbesondere Logins / Registrierung von Accounts und Webseiten, die Javascript f&uuml;r die volle Funktionalit&auml;t ben&ouml;tigen.</p>
+
+<h4>Probleme beim Login oder Registrierung eines Account</h4>
+<p>Nicht immer sind die Gr&uuml;nde f&uuml;r eine eingeschr&auml;nkte Funktionalit&auml;t von Webseiten auf den ersten Blick erkennbar.</p>
+<ul>
+<li>Gute Webdesigner weisen den Surfer rechtzeitig auf notwendige Freigaben
+hin.<br>H&auml;ufig m&uuml;ssen Sie Cookies freigeben, um sich anzumelden:
+<div style="padding: 10px;">
+<img src="img_jondofox/cookies_required.png" alt="Cookies erforderlich" style="border: 1px solid #333;">
+</div>
+Einige Webseiten bieten die volle Funktionalit&auml;t nur mit Javascript:
+<div style="padding: 10px;">
+<img src="img_jondofox/cookies_required2.png" alt="Cookies und Javascript erforderlich">
+</div>
+</li>
+<li>Weniger gute Websites liefern nur eine unverst&auml;ndliche Fehlermeldung:
+<div style="padding: 10px;">
+<img src="img_jondofox/cookies_wrong1.png" alt="schlechte Fehlermeldung">
+</div>
+</li>
+<li>Ganz schlechte Websites machen irgendwas, aber nicht das, was der Surfer erwartet.<br>H&auml;ufig f&uuml;hrt ein Login-Versuch nur zur&uuml;ck zur Startseite ohne erfolgreiche Anmeldung.</li>
+<li><span style="font-weight:bold; color: #333;">CAPTCHAs:</span> erfordern in der Regel die Freigabe von Javascript, um das R&auml;tsel zu l&ouml;sen.<br>Dabei werden h&auml;ufig externe CAPTCHA Provider eingebunden.</li>
+</ul>
+<h4>L&ouml;sungsm&ouml;glichkeiten f&uuml;r diese Probleme</h4>
+<p>Bei diesen Problemen gehen Sie bitte nacheinander wie folgt vor:
+<ol>
+<li><a href="#controlCookies">Cookies tempor&auml;r erlauben  <img src="next.gif" alt="-&gt;"></a> Sie k&ouml;nnen Cookies von dieser Website gefahrlos tempor&auml;r  erlauben und die Webseite neu laden. Die dabei evtl. gespeicherten Cookies k&ouml;nnen Sie sp&auml;ter problemlos mit einem Neustart des Browser oder in der Cookieverwaltung des Add-on <em>CookieMonster</em> wieder entfernen.</li>
+<li><a href="#noscript">Javascript freigeben <img src="next.gif" alt="-&gt;"></a> Wenn die Freigabe von Cookies nicht ausreicht, ist wahrscheinlich zus&auml;tzlich die Freigabe von Javascript n&ouml;tig. Sie sollten Javascript nur auf vertrauensw&uuml;rdigen Webseiten freigeben, da es mit dieser Technik m&ouml;glich ist, eine Velzahl von Informationen auszulesen.
+</li>
+<li><a href="#noscript">Javascript f&uuml;r Dritte freigeben <img src="next.gif" alt="-&gt;"></a> Einige Websites mit gro&szlig;en Serverfarmen (Facebook, Youtube, Yahoo! usw.) ben&ouml;tigen die Freigabe von Javascript auch f&uuml;r zus&auml;tzliche Domains f&uuml;r Logins. Auch f&uuml;r externe CAPTCHA Provider muss in der Regel Javascript freigegeben werden.</li>
+
+</ol>
+<h4>Probleme beim Betrachten von Videos und PDF Dokumenten</h4>
+<p>Aus Sicherheitsgr&uuml;nden sind Plug-ins f&uuml;r die Darstellung von Nicht-HTML Inhalten im JonDoFox deaktiviert.</p>
+<ul>
+<li>Mit Flash Applets ist es m&ouml;glich, die Proxy-Einstellungen des Browsers zu umgehen und Surfer anhand der IP-Adress zu deanonymisieren.</li>
+<li>Nach Untersuchungen von verschiedenen Anti-Viren Firmen erfolgen die meisten Angriffe aus dem Netz mit b&ouml;sartigen PDF-Dokumenten sowie Flash- oder Java-Applets. Diese werden als Drive-by-Download im Hintergrund geladen und k&ouml;nnen den Rechner unauff&auml;llig infizieren.</li>
+</ul>
+<p>Wir empfehlen, PDF-Dokumente und Flash Videos immer lokal zu speichern und in einem externen Betrachter zu &ouml;ffnen. F&uuml;r den <a href="https://www.anonym-surfen.de/help/jondofox4.html">Download von Flash Videos&nbsp;<img src="next.gif" alt="-&gt;"></a> ist das Add-on UnPlug im JonDoFox enthalten. Mit dem Add-on NoScript k&ouml;nnen Sie auch aktive Inhalte wie Flash Videos im Browser freigeben, wenn Sie es unbedingt m&ouml;chten.</p>
+
+<h3><a name="jdf_features" id="jdf_features">
+JonDoFox Features</a></h3>
+
+<p>Im Folgenden werden die Hauptfeatures unserer JonDoFox-Erweiterung n&auml;her
+erl&auml;utert, die ein sichereres und anonymes Surfen im Internet erm&ouml;glichen.</p>
+
+<h4><a name="switchProxies" id="switchProxies">Flexibel bleiben und Proxies wechseln</a></h4>
+
+<p>Wenn Sie mit einem anderen (lokalen) Proxy als JonDo oder ganz
+ohne Proxy im Web surfen wollen, benutzen Sie einfach die in JonDoFox (links
+oben) integrierte Schaltfl&#xe4;che <img alt="JonDo-Proxy"
+src="img_jondofox/jondos-16.png">, um zwischen verschiedenen
+Proxy-Konfigurationen bequem hin- und herzuschalten: </p>
+
+<div align="center">
+<img alt="JonDoFox-Popup" src="img_jondofox/jondofox_popup.png" vspace="8" hspace="0" alt="JonDoFox Popup-Men&uuml;">
+</div>
+<ul>
+  <li><b>Kein Proxy</b>: Wenn kein Proxy eingestellt ist, verbindet sich
+    JonDoFox direkt zum Internet. <strong>Achtung: Ihre IP-Adresse wird
+    dadurch im Klartext geschickt und nicht verschleiert!</strong></li>
+  <li><b>Benutzerdefiniert</b>: Mithilfe dieser Einstellung k&#xf6;nnen Sie
+    Ihre eigene Proxydefinition aktivieren. &#xdc;ber den Men&#xfc;punkt <span
+    class="nowrap"><img src="img_jondofox/servermanuell.gif"
+    alt="NoScript: nicht vertrauensw&#xfc;rdig"> <b>Einstellungen</b></span>
+    k&#xf6;nnen Sie eine solche individuelle Proxykonfiguration erstellen. Dies
+    wird aber nur Experten empfohlen.</li>
+  <li><b>Tor</b>: Wenn Sie das Programm <a
+    href="https://www.torproject.org">Tor</a> installiert und
+    gestartet haben, k&#xf6;nnen Sie es mithilfe dieser Einstellung als
+    Alternative zu JonDo verwenden.</li>
+  <li><b>JonDo</b>: Bei dieser Einstellung schickt JonDoFox die
+    Kommunikationsdaten des Browsers &#xfc;ber JonDo und wird Ihre IP-Adresse verstecken. JonDo muss dazu separat
+    <a href="http://www.anonym-surfen.de/jondo.html">installiert und gestartet</a>
+    sein.</li>
+</ul>
+
+<p>Wenn Sie eine Datei am Proxy vorbei herunterladen m&#xf6;chten, ohne den
+Proxy dabei zu deaktivieren (z.B. um bei gro&#xdf;en Downloads Kosten oder Zeit
+zu sparen), &#xf6;ffnen Sie dazu einfach das Kontextmen&#xfc; mit einem rechten
+Mausklick auf die Datei und w&#xe4;hlen Sie <em>JonDo/Tor/Proxy umgehen und
+Ziel speichern unter...</em> aus.</p>
+
+<h4><a name="referer" id="referer">Referer-Management</a></h4>
+
+<p>Der Referer ist eines der Merkmale, mit dessen Hilfe sich Nutzer beim Surfen
+unterscheiden lassen. Das kann allerdings verhindert werden, indem man unser
+Referer-Management aktiviert:</p>
+
+<div align="center">
+<img alt="Referer-Management" src="img_jondofox/referer_management_de.png" vspace="8" hspace="0">
+</div>
+
+<p>Dabei wird der Referer nicht einfach gel&ouml;scht, schlie&szlig;lich
+lassen sich einige Webangebote ohne einen mitgeschickten Referer &uuml;berhaupt
+nicht benutzen. Vielmehr wird je nach Kontext des Seitenaufrufs ein Referer
+gesetzt (z.B. bei Weiterleitungen innerhalb derselben Domain) oder leer
+&uuml;bergeben (z.B. beim Laden von Lesezeichen). Damit wird garantiert,
+dass aus dem Referer keine Informationen zur Nutzeridentifizierung gewonnen
+werden k&ouml;nnen.
+</p>
+
+<h4><a name="User Agent" id="User Agent">User Agent-Management</a></h4>
+<p>Nicht nur &uuml;ber den Referer, sondern auch &uuml;ber den individuellen
+User Agent, den der Browser bei Webanfragen mitsendet, lassen sich
+Nutzerinformationen gewinnen. Daher haben wir einen einheitlichen User Agent
+zusammengestellt, den alle JonDo-Nutzer mitschicken, wenn sie Anfragen an
+das WWW stellen. Wenn hingegen Tor als Proxy eingestellt wird, so wird der User
+Agent an die Vorgaben von <a href="https://www.torproject.org/torbutton/">
+Torbutton</a> angepasst. Wer seinen Proxy manuell konfigurieren m&ouml;chte,
+hat die M&ouml;glichkeit, zwischen verschiedenen User Agents zu w&auml;hlen:</p>
+
+<div align="center">
+<img alt="User Agent-Management" src="img_jondofox/user_agent_management_de.png" vspace="8" hspace="0">
+</div>
+
+<h4><a name="SafeCache" id="SafeCache">Schutz vor Cacheangriffen</a></h4>
+<p>Neben dem Versuch, aus dem Referer, dem User Agent und anderen HTTP-Headern
+Informationen &uuml;ber den Nutzer zu gewinnen, gibt es noch die
+M&ouml;glichkeit, den Cache des Browsers f&uuml;r Angriffe zu verwenden. Dabei
+wird versucht, die k&uuml;rzere Ladezeit von Webseiten aus dem Cache auszunutzen
+ oder sogenannte Cache-Cookies zu installieren. Zum besseren Schutz vor diesen
+Angriffen wurde der Code der SafeCache-Extension mit leichten Modifikationen
+ in unsere Erweiterung integriert.<br/> Dar&uuml;ber hinaus sch&uuml;tzt JonDoFox vor Versuchen, den
+Nutzer mit Hilfe von HTTP-Authentifikationsdaten zu verfolgen. Dazu werden
+sowohl die spezifischen Nutzerdaten, die an Drittseiten gesendet als auch von
+ihnen empfangen werden, herausgefiltert. Im JonDoFox-Einstellungsmen&uuml; findet sich ein entsprechender Hinweis darauf:</p>
+
+<div align="center">
+<img alt="Einstellungen Header" src="img_jondofox/settings_header_de.png" vspace="8" hspace="0">
+</div>
+
+<p align="center">...</p>
+
+<div align="center">
+<img alt="SafeCache" src="img_jondofox/safecache_de.png" vspace="8" hspace="0">
+</div>
+
+<h4><a name="Plugins" id="Plugins">Schutz vor Plugins</a></h4>
+<p>Plugins k&ouml;nnen die Proxy-Einstellungen
+von JonDoFox umgehen, was sie besonders gef&auml;hrlich beim anonymen Surfen
+macht. Daher werden beim JonDoFox im JonDo-Modus standardm&auml;&szlig;ig alle
+Plugins abgeschaltet. Lediglich Flash wird aktiv gelassen, was allein dessen
+weiter Verbreitung zuzuschreiben ist. Die Einstellung, die dieses Verhalten
+regelt, findet man wiederum im JonDoFox-Einstellungsmen&uuml;:</p>
+
+<div align="center">
+<img alt="Einstellungen Header" src="img_jondofox/settings_header_de.png" vspace="8" hspace="0">
+</div>
+
+<p align="center">...</p>
+
+<div align="center">
+<img alt="Plugins" src="img_jondofox/plugins_de.png" vspace="8" hspace="0">
+</div>
+
+<h4><a name="Certificate Patrol" id="Certificate Patrol">Verbesserter Schutz 
+vor gef&auml;lschten SSL-Zertifikaten</a></h4>
+<p>F&uuml;r einen besseren Schutz vor gef&auml;lschten SSL-Zertifikaten wurde
+die Funktionalit&auml;t der Certificate Patrol-Extension etwas erweitert und in
+die JonDoFox-Extension aufgenommen (siehe JonDoFox' Einstellungsmen&uuml;):</p>
+
+<div align="center">
+<img alt="Einstellungen Header" src="img_jondofox/settings_header_de.png" vspace="8" hspace="0">
+</div>
+
+<p align="center">...</p>
+
+<div align="center">
+<img alt="Certificate Patrol" src="img_jondofox/certpatrol_de.png" vspace="8" hspace="0">
+</div>
+
+<p>Dadurch wird es f&uuml;r den Nutzer zum einen sehr komfortabel, die
+Fingerabdr&uuml;cke der Zertifikate zu &uuml;berpr&uuml;fen. Zum anderen wird
+bei Zertifikats&auml;nderungen ein Dialog eingeblendet, der den Nutzer auf
+eventuell vorhandene Unregelm&auml;&szlig;igkeiten hinweist und so besser vor
+<a href="http://de.wikipedia.org/wiki/Man-in-the-middle-Angriff">Man-in-the-middle-Angriffen</a> sch&uuml;tzt.</p>
+<p>Wenn Sie diese Funktion aktiviert lassen, wird die Datei <em>CertPatrol.sqlite</em> im Profil-Verzeichnis
+des JonDoFox angelegt. Diese Datenbank enth&auml;lt eine Liste der via HTTPS besuchten
+Webseiten und Informationen zu den dabei verwendeten SSL-Zertifikaten. Aus dieser Datenbank k&ouml;nnen keine Informationen von einem Webserver abgefragt werden.</p>
+<p>Dar&uuml;ber hinaus gibt es die M&ouml;glichkeit, der Electronic Frontier Foundation (EFF) beim Sammeln von SSL-Zertifikaten zu helfen. Dessen Ziel ist es, das Surfen im Web letztendlich sicherer zu machen. Dazu k&ouml;nnen JonDoFox-Nutzer nun leicht beitragen.</p>
+
+<h4><a name="Temporary E-mail addresses" id="Temporary E-mail addresses">Tempor&auml;re E-Mail-Adressen benutzen</a></h4>
+<p>Mit dem JonDoFox haben Sie die M&ouml;glichkeit, bequem tempor&auml;re E-Mail-Adressen bei einer Anmeldung in Foren oder Beim Posten von Blog-Kommentaren zu benutzen. Klicken Sie dazu mit der rechten Maustaste auf ein Textfeld, in dem die E-Mail-Adresse erscheinen soll und w&auml;hlen Sie aus dem aufklappenden Men&uuml; folgenden Eintrag aus:</p>
+
+<div align="center">
+<img alt="Tempor&auml;re E-Mail-Adressen -- Kontextmen&uuml;" src="img_jondofox/temp_emails_context_de.png" vspace="8" hspace="0">
+</div>
+
+<p>Wenn Sie auf 'E-Mail-Adresse generieren (tempor&auml;r)' klicken, wird die
+angeforderte E-Mail-Adresse in das Textfeld eingef&uuml;gt und Ihr Account in
+einem neuen Tab ge&ouml;ffnet. Wenn Sie selbst bestimmen m&ouml;chten, welchen
+Anbieter tempor&auml;rer E-Mail-Adressen Sie verwenden, dann haben Sie zwei
+M&ouml;glichkeiten. Zum einen k&ouml;nnen Sie mit der Maus &uuml;ber das '&gt;'
+fahren und spontan einen Anbieter ausw&auml;hlen. Zum anderen k&ouml;nnen Sie in den JonDoFox-Einstellungen eine Auswahl festlegen. Dort finden Sie auch die M&ouml;glichkeit, das Feature ganz zu deaktivieren:</p>
+
+<div align="center">
+<img alt="Tempor&auml;re E-Mail-Adressen -- Einstellungen" src="img_jondofox/temp_emails_de.png" vspace="8" hspace="0">
+</div>
+
+<h4><a name="Searchbar Privacy" id="Searchbar Privacy">Schutz der Suchanfragen vor Beoachtern am Rechner-Arbeitsplatz</a></h4>
+<p>Um die Eingaben in die Suchleiste des Browsers vor ungewollten Beobachtern zu sch&uuml;tzen, entfernt JonDoFox diese nach jeder Eingabe. Au&szlig;erdem wird die Suchhistorie, in der die eingegebenen Begriffe gespeichert werden, jede halbe Stunde gel&ouml;scht. Damit kann es zum einen nicht mehr passieren, dass die letzte Suchanfrage f&uuml;r jeden, der Zugang zur Browsersitzung des Nutzers hat, einsehbar bleibt. Zum anderen wird die M&ouml;glichkeit, dass Eintr&auml;ge in der Suchhistorie den Nutzer kompromittieren, minimiert, ohne deren Funktionalit&auml;t ganz aufzugeben.</p>
+
+<h3><a name="controlCookies" id="controlCookies">Cookies kontrollieren mit Cookie Monster</a> </h3>
+
+<p>Mittels <em>Cookie Monster</em> k&#xf6;nnen Sie sehr komfortabel bestimmen, von welchen
+Webseiten Sie Cookies annehmen und bei welchen Sie Cookies unterbinden wollen.
+Wenn Sie mit der linken Maustaste auf das <span class="nowrap">Icon <img
+  src="img_jondofox/cookie-monster-logo.png" alt="Cookie Monster Icon"></span> von <em>Cookie Monster</em> klicken,
+k&#xf6;nnen Sie im unteren Teil des Men&uuml;s folgende Freigaben f&#xfc;r die jeweils besuchte Webseite vornehmen: </p>
+
+<div style="text-align:center">
+<img src="img_jondofox/cookieMonster_menu_de.png" alt="Cookie Monster Men&#xfc;" vspace="8" hspace="0"> </div>
+<ul>
+  <li> <b>Erlaube Cookies tempor&auml;r von anonymous-proxy-servers.net</b><br>
+    Das Cookie wird nur f&#xfc;r die momentane Browsersitzung akzeptiert und
+    danach gel&#xf6;scht. Nach einem Neustart des Browsers hat die Webseite
+    keine Berechtigung mehr, ein Cookie auszulesen oder zu setzen. <strong>Dies
+    ist die empfohlene Einstellung, falls Sie Cookies aktivieren
+    m&#xf6;chten.</strong> Bei erfolgreicher Auswahl dieser Option erscheint
+  das <span class="nowrap">Icon <img src="img_jondofox/face-angel-temp.png"></span> in der Statuszeile.</li>
+  <li><b>Erlaube Cookies von anonymous-proxy-servers.net</b><br>
+    Das Cookie wird solange im Browser gespeichert, wie es von der Webseite
+    vorgegeben wird. Es kann auch nach dem Neustart des Browsers erhalten
+    bleiben und von der Webseite angefordert werden. Das Symbol f&uuml;r dieses
+    Cookieverhalten ist das <span class="nowrap">Icon <img src="img_jondofox/face-angel.png"></span>, was bei erfolgreicher Auswahl dieser Option wiederum
+    in der Statusleiste erscheint. </li>
+  <li><b>Verweigere Cookies von anonymous-proxy-servers.net</b><br>
+    Cookies k&ouml;nnen nun weder von der Webseite ausgelesen noch von ihr
+    gesetzt werden. Bei erfolgreicher Auswahl dieser Option erscheint das <span     class="nowrap">Icon <img src="img_jondofox/face-devil-grin.png"></span> in der Statuszeile. </li>
+  <li><b>Erlaube Sitzungscookies von anonymous-proxy-servers.net</b><br>
+    Das Cookie wird nur f&#xfc;r die momentane Browsersitzung akzeptiert und
+    danach gel&#xf6;scht. Die Webseite darf in Zukunft nach dem Neustart des Browsers
+    wieder neue Cookie setzen. Diese Option k&ouml;nnen Sie f&uuml;r
+    h&auml;ufig besuchte, vertrauensw&uuml;rdige Websites nutzen, die nur
+    mit Cookies benutzbar sind. Bei erfolgreicher Auswahl dieser Cookieeinstellung erscheint das <span class="nowrap">Icon <img src="img_jondofox/face-glasses.png"></span> in der Statuszeile.</li>
+</ul>
+<p> <span style="font-weight: bold; color: #333;">Hinweis:</span> Es kommt vor, dass Nutzer unbedacht die dauerhafte Speicherung von Cookies freigeben oder sich &uuml;ber die Unterschiede nicht sicher sind. Aus diesem Grund werden in den Standard-Einstellungen des JonDoFox ALLE Cookies beim Beenden der Sitzung gel&ouml;scht. Die oben beschriebene Option 2. <em>&quot;Erlaube Cookies von....&quot;</em> funktioniert also nicht wie erwartet, die Cookies werden beim Beenden ebenfalls gel&ouml;scht, so wie bei Auswahl der Option 4. <em>&quot;Erlaube Sitzungscookies von....&quot;</em>.</p>
+
+<p>Um das Standardverhalten von CookieMonster wieder herzustellen und die dauerhafte Speicherung von Cookies bei Auswahl der Option 2. zu erm&ouml;glichen, &ouml;ffnen sie bitte den Dialog <em>&quot;Einstellungen&quot;</em> und wechseln sie zur Sektion <em>&quot;Datenschutz&quot;</em>.</p>
+<div style="text-align: center; padding: 10px;">
+<img src="img_jondofox/cookie_enable1.png" alt="Firefox Einstellungen zum Datenschutz">
+</div>
+<p>Hinter der Option <em>&quot;Die Chronik l&ouml;schen wenn Firefox geschlossen wird&quot;</em> gibt es den Button <em>&quot;Einstellungen&quot;</em>. Klicken sie auf den Button und deaktivieren sie in dem sich &ouml;ffnenden Dialog die Option zum L&ouml;schen aller Cookies beim Beenden.</p>
+<div style="text-align: center; padding: 10px;">
+<img src="img_jondofox/cookie_enable2.png" alt="L&ouml;schen der Cookies beim Beenden">
+</div>
+
+<p>In Zukunft k&ouml;nnen sie f&uuml;r einzelne Server eine dauerhafte Speicherung von Cookies freigeben. Bitte beachten sie, dass diese Cookies ein Tracking &uuml;ber einen l&auml;ngeren Zeitraum erm&ouml;glichen k&ouml;nnen.</p>
+
+<h3><a name="noscript" id="noscript">Kontrolle von JavaScript mit NoScript</a></h3>
+
+<p>Wenn Sie auf das <span class="nowrap">NoScript-Icon <img
+src="img_jondofox/noscript.gif" alt="NoScript-Icon"></span> klicken, erhalten
+Sie eine Auflistung der Adressen/Dienstanbieter mit JavaScript-Codes auf der
+gerade besuchten Webseite. Die entsprechenden Eintr&#xe4;ge sind durch das
+<span class="nowrap">Icon <img src="img_jondofox/noscript_temp.gif"
+alt="NoScript tempor&#xe4;r erlauben"></span> gekennzeichnet. Neben der betrachteten Websites
+werden h&auml;ufig auch Scripte von Subdomains ben&ouml;tigt, um die volle Funktion zu ereichen.
+Welche Subdomains freigegeben werden m&uuml;ssen, kann nur durch probieren ermittelt werden.</p>
+
+<p><span style="font-weight:bold; color: #333;">CAPTCHAs:</span> H&auml;ufig verwenden Webseiten Captchas als Spamschutz. Die
+Captchas k&ouml;nnen von Drittseiten eingebunden sein (Recaptcha.com, Nucaptcha.com...) und funktionieren
+nur, wenn Javascript f&uuml;r den Captcha-Provider freigegeben ist. Wenn das Captcha auf einer
+Webseite nicht funktioniert, schauen sie in der NoScript-Liste nach, ob evtl. ein Captcha-Provider
+dabei ist und geben sie Javascript tempor&auml;r f&uuml;r diese Domain frei.</p>
+
+<p>Weitere Skripte von Drittanbietern bzw. anderen Adressen werden
+&#xfc;blicherweise nur dazu verwendet, um Sie auszuspionieren, und sind
+f&#xfc;r die Funktionalit&#xe4;t der Webseite selten notwendig.</p>
+
+<div align="center">
+<img src="img_jondofox/noscript_allow.png" alt="NoScript: Erlaubnis erteilen" vspace="8" hspace="0">
+</div>
+
+<p>Durch einen Klick auf <span><img src="img_jondofox/noscript_temp.gif"
+alt="NoScript tempor&#xe4;r erlauben"> <b>tempor&#xe4;r erlauben</b></span>
+aktivieren Sie die Skripte f&#xfc;r diesen Eintrag. Mit einem weiteren Klick
+k&#xf6;nnen Sie eine bereits
+erteilte Berechtigung wieder entziehen (siehe n&auml;chste Grafik). Wenn Sie allen Adressen die
+tempor&#xe4;ren Berechtigungen entziehen wollen, k&#xf6;nnen Sie dies, indem Sie
+auf den Eintrag <span><img src="img_jondofox/noscript_disallowall.gif"
+alt="NoScript: Tempor&#xe4;re Berechtigungen aufheben"><b>Tempor&#xe4;re
+Berechtigungen aufheben</b></span> klicken. Mit einem Restart des Browser werden ebenfalls alle tempor&auml;ren Freigaben gel&ouml;scht.</p>
+<p>F&uuml;r Websites die sie h&auml;ufig besuchen, k&ouml;nnen sie die Einstellungen mit
+einem Klick auf den Men&uuml;punkt <span style="font-weight:bold; color: #333;">Berechtigungen dieser Seite speichern</span>
+dauerhauft festlegen. Dann muss man nicht bei jedem Besuch die Freiaben wieder
+neu einrichten.</p>
+
+<div align="center">
+<img src="img_jondofox/noscript_disallow.png" alt="NoScript: Erlaubnis entziehen" vspace="8" hspace="0">
+</div>
+
+<p>Sollten Sie einer Adresse grunds&#xe4;tzlich nicht vertrauen, k&#xf6;nnen
+Sie diese als <i>nicht vertrauensw&#xfc;rdig</i> einstufen, und sie wird
+anschlie&#xdf;end nicht mehr unter den Adressen auftauchen, die sie zulassen
+k&#xf6;nnen. Um diese Einstufung durchzuf&#xfc;hren, fahren Sie mit der Maus
+&#xfc;ber <span class="nowrap"><img src="img_jondofox/noscript_untrwicon.gif"
+alt="NoScript: nicht vertrauensw&#xfc;rdig"> <b>Nicht
+vertrauensw&#xfc;rdig</b>.</span> Sie erhalten dann die &#xdc;bersicht der
+Adressen auf der gerade besuchten Webseite, denen Sie das Vertrauen entziehen
+k&#xf6;nnen: </p>
+
+<div align="center">
+<img src="img_jondofox/noscript_untrustw.png"
+alt="NoScript: nicht vertrauensw&#xfc;rdig Men&#xfc;"> </div>
+
+<p>Die Aktion kann auf die gleiche Weise wieder r&#xfc;ckg&#xe4;ngig gemacht
+werden.</p>
+
+<h4><a name="noscript_plugin" id="noscript_plugin">Kontrolle der installierten Plugins</a></h4>
+
+<p>Wenn Sie eine Webseite besuchen, die Plugin-Inhalte, wie Flash-Movies oder
+Java-Applets, enth&auml;lt, werden diese von NoScript grunds&auml;tzlich
+blockiert. Anstelle des aktiven Inhalts erscheint ein NoScript-Platzhalter: </p>
+
+<div style="text-align: left; padding: 10px;">
+<img src="img_jondofox/noscript_placeholder.gif" alt="NoScript-Platzhalter">
+</div>
+
+<p>Sie k&#xf6;nnen den jeweiligen Inhalt durch einen Klick auf den Platzhalter
+oder &#xfc;ber die Auswahl <span class="nowrap" style="font-weight:bold; color: #333;"><img
+src="img_jondofox/noscript_blockedcontent.gif"
+alt="NoScript: Geblockte Objekte"> Geblockte Objekte</span> im
+NoScript-Men&#xfc; <img src="img_jondofox/noscript.gif" alt="NoScript-Icon">
+freigeben. </p>
+
+<p><span style="font-weight:bold; color: #333;">Warnung:</span> Ohne <a
+href="https://anonym-surfen.de/help/flash-applets.html">spezielle
+Schutzma&#xdf;nahmen</a> kann &#xfc;ber freigegebene Plugin-Inhalte Ihre
+Anonymit&#xe4;t aufgehoben und sogar Ihr System besch&#xe4;digt werden.</p>
+
+<h3><a name="noscript_ssl" id="noscript_ssl">HTTPS-Verschl&uuml;sselung erzwingen</a></h3>
+<p>Der JonDoFox ent&auml;lt das Add-on <a
+  href="https://www.eff.org/https-everywhere">HTTPSEverywhere</a> der EFF.org.
+Dieses Add-on leitet Sie f&uuml;r mehr als 2.500 Websites auf die HTTPS verschl&uuml;sselte Seite um.</p>
+<p>Es gibt vielleicht weitere Webseiten, die Sie &uuml;ber eine SSL gesicherte Verbindung ansurfen m&ouml;chte. Um f&uuml;r diese Webseiten die HTTPS-Verschl&uuml;sselung zu erzwingen, k&ouml;nnen Sie zwei Wege nutzen. Am einfachsten geht es mit der Funktion <em>Enforce HTTPS</em> von NoScript. Wenn die HTTPS-Verschl&uuml;sselung ein komplexes Umschreiben der URL erfordert, k&ouml;nnen Sie eigene <em>Regeln f&uuml;r HTTPSEverywhere</em> erstellen.</p>
+<h4>HTTPS erzwingen mit NoScript</h4>
+<p>NoScript gibt Ihnen die M&ouml;glichkeit, HTTPS f&uuml;r Verbindungen zu erzwingen.
+Klicken Sie dazu mit der rechten Maustaste auf das NoScript-Symbol <img src="img_jondofox/noscript.gif" alt="NoScript-Icon">. Unter <i>Einstellungen -&gt; Erweitert -&gt; HTTPS -&gt; Verhalten</i> bietet NoScript mittels einer Whitelist genau diese Option an, wie man im folgenden Bildschirmfoto sehen kann. Es ist dabei m&ouml;glich, sowohl einzelne Domains in die Whitelist einzutragen, als auch mit Hilfe des Wildcard-Zeichens ("*") SSL f&uuml;r ganze Subdomains zu erzwingen.</p>
+
+<div style="text-align: center;">
+  <img src="img_jondofox/noscript_STS_de.png" alt="NoScript_STS" vspace="8" hspace="0">
+</div>
+
+<p>NoScript kann dabei nur die Zeichenkette <em>http://</em> durch <em>https://</em> ersetzen.</p>
+
+<h3><a name="videoDownload" id="videoDownload">Anonymer Download von Videos und Video-Streams</a></h3>
+<p>Plug-Ins f&uuml;r die Wiedergabe von Videos sind aus Sicherheitsgr&uuml;nden deaktiviert.<p>
+Mit Flash-Applets ist es m&ouml;glich, die Proxy Einstellungen des Browsers zu umgehen. Bitte
+beachten sie die Hinweise zur <a href="https://www.anonym-surfen.de/help/flash-applets.html">Anonymisierung von Flash-Applets&nbsp;<img src="next.gif"
+alt="-&gt;"></a>,
+bevor sie diese im Browser freigeben. Sicherer ist der Download von Web-Videos mit Unplug
+oder dem VLC Media Player. Die lokal gespeicherten Videos k&ouml;nnen sie gefahrlos mit einem
+Media Player betrachten. Wir empfehlen den <a href="http://www.videolan.org/">VLC Media Player</a>
+f&uuml;r das Abspielen der Videos.</p>
+</div>
+<div style="clear: both;">
+<p>Hinweis: Die maximal zul&auml;ssige Dateigr&ouml;&szlig;e f&uuml;r Downloads
+ist auf kostenfreien Kaskaden auf 2&thinsp;MB begrenzt! Die bei Videos &uuml;blichen Dateien
+k&ouml;nnen sie nur &uuml;ber die kostenpflichtigen <a href="https://www.anonym-surfen.de/help/premium.html">Premiumdienste</a> herunter laden.</p>
+
+
+<h4>Flash-Video-Download mit UnPlug</h4>
+<p>Um nicht das sehr gef&#xe4;hrliche Flash im Browser aktivieren zu
+m&#xfc;ssen, sollten Sie Web-Videos immer auf Ihre Festplatte herunterladen und
+von dort abspielen. Dies erspart Ihnen au&#xdf;erdem den zus&#xe4;tzlichen
+Download-Datenverkehr, wenn Sie ein Video mehrmals betrachten m&#xf6;chten.
+JonDoFox enth&#xe4;lt dazu das
+Download-Tool <em>UnPlug</em>. Wenn Sie z.B. auf einer YouTube-Seite sind,
+klicken Sie einfach auf den entsprechenden Men&uuml;eintrag (rot markiert)  in Ihrem <em>Extras</em>-Men&uuml; und w&#xe4;hlen Sie das Video aus, das Sie herunterladen m&#xf6;chten:</p>
+
+<div align="center"><img alt="1-Klick-Video-Download mit UnPlug"
+src="img_jondofox/UnPlug_de.png" vspace="10"></div>
+
+<p>Alternativ k&ouml;nnen Sie Download-Webseiten, wie <a href="http://www.downloadtube.org">DownloadTube.org</a>
+or <a href="http://keepvid.com/">KEEPVID.com</a> nutzen, um Videos zu konvertieren und zu speichern.</p>
+
+<h3><a name="filterAds" id="filterAds">Werbung filtern mit
+Adblock Plus</a></h3>
+
+<p>Adblock Plus <img alt="Adblock Plus" src="img_jondofox/abp-enabled-16.png">
+arbeitet als Werbefilter im Hintergrund. Normalerweise m&#xfc;ssen Sie dessen
+Einstellungen nicht ver&#xe4;ndern, k&#xf6;nnen aber jederzeit eigene
+Filterlisten erg&#xe4;nzen.</p>
+
+</body>
+</html>
